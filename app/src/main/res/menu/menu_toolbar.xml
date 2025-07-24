@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/itemBusiness"
+        android:background="#FFFFFF"
+        android:enabled="true"
+        android:title="메뉴0"
+        app:actionViewClass="android.widget.Spinner"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/itemKeyboard"
+        android:enabled="true"
+        android:icon="@drawable/keyboard_48px"
+        android:title="메뉴1"
+        app:showAsAction="always" />
+
+    <!--<item
+        android:id="@+id/itemMenu"
+        android:enabled="true"
+        android:title="메뉴1"
+        android:icon="@drawable/baseline_menu_black_36"
+        app:showAsAction="always"/>-->
+
+    <item
+        android:id="@+id/itemQR"
+        android:enabled="true"
+        android:icon="@drawable/baseline_qr_code_black_36"
+        android:title="메뉴2"
+        app:showAsAction="always"/>
+</menu>

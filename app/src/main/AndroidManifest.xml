@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <!--명시해야할 권한 = 위험 권한 = 런타임 권한-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  android:maxSdkVersion="28" /><!--29이상부터는 필요없다.-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--<uses-permission android:name="android.permission.READ_SMS" />-->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /><!--과거버전에서는 물어보지 않아서, 무조건 명시하지 않도록 처리한다.-->
+
+    <uses-permission android:name = "android.permission.VIBRATE"/> <!--진동 효과-->
+
+    <!--여기만으로 OK-->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/><!--오레오 버전 부터 추가된  설치 권한-->
+    <uses-permission android:name="android.permission.BLUETOOTH"/><!--핸드폰정보 이름 설정값을 알아오기위한 블루투스 권한-->
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:name="com.symbol.eumsung2pop.view.application.ApplicationClass"
+        android:allowBackup="true"
+        android:icon="@drawable/logo2"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31" >
+        <activity android:name=".view.activity.SplashScreenActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.activity.MainActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".view.activity.EditTagActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".view.activity.StockOutActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".view.activity.InputActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".view.activity.PackingActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".view.activity.InventorySurveyActivity"
+            tools:ignore="LockedOrientationActivity"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            tools:replace="android:authorities"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+    </application>
+
+</manifest>

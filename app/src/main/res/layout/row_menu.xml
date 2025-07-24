@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:cardElevation="0dp"
+        app:rippleColor="#ACACAC">
+
+        <LinearLayout
+            android:id="@+id/layoutMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
+
+            <ImageView
+                android:id="@+id/imvIcon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="12dp"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/baseline_logout_black_36" />
+
+            <TextView
+                android:id="@+id/txtMenuName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="TextView"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
